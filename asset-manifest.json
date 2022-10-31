@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/fem-interactive-rating-component/static/css/main.11634587.css",
+    "main.js": "/fem-interactive-rating-component/static/js/main.40a0bdc4.js",
+    "static/js/787.7d3ff834.chunk.js": "/fem-interactive-rating-component/static/js/787.7d3ff834.chunk.js",
+    "static/media/illustration-thank-you.svg": "/fem-interactive-rating-component/static/media/illustration-thank-you.d74a66b551b99ae110b5362ed63106bf.svg",
+    "index.html": "/fem-interactive-rating-component/index.html",
+    "static/media/icon-star.svg": "/fem-interactive-rating-component/static/media/icon-star.12766a8d207af861a70f92500634c8be.svg",
+    "main.11634587.css.map": "/fem-interactive-rating-component/static/css/main.11634587.css.map",
+    "main.40a0bdc4.js.map": "/fem-interactive-rating-component/static/js/main.40a0bdc4.js.map",
+    "787.7d3ff834.chunk.js.map": "/fem-interactive-rating-component/static/js/787.7d3ff834.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.11634587.css",
+    "static/js/main.40a0bdc4.js"
+  ]
+}
