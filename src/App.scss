@@ -1,0 +1,8 @@
+@import "./shared/variables.scss";
+
+.App {
+  background-color: $color__neutral--very-dark-blue;
+  font-size: $typography__font-size;
+  font-family: $typography__font-family;
+  font-weight: $typography__font-weight--regular;
+}

@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+$width__mobile: 375px;
+$width__desktop: 1440px;
+
+$color__primary--orange: hsl(25, 97%, 53%);
+
+$color__neutral--very-dark-blue: hsl(216, 12%, 8%);
+$color__neutral--dark-blue: hsl(213, 19%, 18%);
+$color__neutral--white: hsl(0, 0%, 100%);
+$color__neutral--light-grey: hsl(217, 12%, 63%);
+$color__neutral--medium-grey: hsl(216, 12%, 54%);
+$color__neutral--medium-grey-opacity: hsla(216, 12%, 54%, 0.1);
+
+$typography__font-size: 15px;
+
+$typography__font-family: "Overpass", sans-serif;
+
+$typography__font-weight--regular: 400;
+$typography__font-weight--bold: 700;
+
+@mixin mobile {
+    @media screen and (max-width: $width__mobile){
+        @content;
+    }    
+}
