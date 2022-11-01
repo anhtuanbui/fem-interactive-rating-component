@@ -1,6 +1,6 @@
 # Product preview card
 
-This is a challenge from https://www.frontendmentor.io/  
+This is a solution for a challenge from https://www.frontendmentor.io/  
 
 The page is built using Reactjs and Sass
 
