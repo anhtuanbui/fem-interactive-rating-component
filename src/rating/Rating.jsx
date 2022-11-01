@@ -19,51 +19,82 @@ export class Rating extends Component {
 
   render() {
     return (
-      <div className='rating container'>
-        <div className="rating-wrapper">
-          {thankyouPage ? <ThankYou /> : <Rate />}
+      <main>
+        <div className='rating container'>
+          <div className="rating-wrapper">
+            {thankyouPage ? <ThankYou /> : <Rate />}
+          </div>
         </div>
-      </div>
+      </main>
     )
   }
 }
 
 export class Rate extends Component {
-
-  numberClicked = (e) => {
-    numberChosen = e.target.getAttribute('data-value');
-    document.getElementsByClassName("rate__numbers--number")[numberChosen - 1].classList.add("rate__numbers--number-selected");
-
-    let docArray = Array.from(document.getElementsByClassName("rate__numbers--number"));
-    docArray.forEach((element, index) => {
-      if (index !== numberChosen - 1) {
-        element.classList.remove("rate__numbers--number-selected");
-      }
-    });
+  constructor(props) {
+    super(props);
+    this.buttonClicked = this.buttonClicked.bind(this);
+    this.state = { selectedOption: '' };
   }
 
+  // numberClicked = (e) => {
+  //   numberChosen = e.target.getAttribute('data-value');
+  //   document.getElementsByClassName("rate__numbers--number")[numberChosen - 1].classList.add("rate__numbers--number-selected");
+
+  //   let docArray = Array.from(document.getElementsByClassName("rate__numbers--number"));
+  //   docArray.forEach((element, index) => {
+  //     if (index !== numberChosen - 1) {
+  //       element.classList.remove("rate__numbers--number-selected");
+  //     }
+  //   });
+  // }
+
   buttonClicked = (e) => {
+    e.preventDefault();
     if (numberChosen !== 0) {
       thankyouPage = true;
     }
   }
+
+  onRadioChange = (e) => {
+    numberChosen = e.target.value;
+    this.setState({ selectedOption: e.target.value });
+  }
+
   render() {
     return (
       <div className='rate'>
         <div className="rate__star">
-          <img src={star} alt="icon star" />
+          <img src={star} alt="" aria-hidden="true"/>
         </div>
         <h1>How did we do?</h1>
         <p className='rate__text'>Please let us know how we did with your support request. All feedback is appreciated
           to help us improve our offering!</p>
-        <div className="rate__numbers">
-          <div className={`rate__numbers--number ${this.numberChosen === 1 ? "rate__numbers--number-selected" : ""}`} data-value="1" onClick={this.numberClicked}>1</div>
-          <div className={`rate__numbers--number ${this.numberChosen === 2 ? "rate__numbers--number-selected" : ""}`} data-value="2" onClick={this.numberClicked}>2</div>
-          <div className={`rate__numbers--number ${this.numberChosen === 3 ? "rate__numbers--number-selected" : ""}`} data-value="3" onClick={this.numberClicked}>3</div>
-          <div className={`rate__numbers--number ${this.numberChosen === 4 ? "rate__numbers--number-selected" : ""}`} data-value="4" onClick={this.numberClicked}>4</div>
-          <div className={`rate__numbers--number ${this.numberChosen === 5 ? "rate__numbers--number-selected" : ""}`} data-value="5" onClick={this.numberClicked}>5</div>
-        </div>
-        <button onClick={this.buttonClicked}>SUBMIT</button>
+        <form>
+          <div className="rate__numbers">
+            <div className="rate__numbers--number">
+              <input type="radio" id='number-1' name='numbers' value={1} onChange={this.onRadioChange} />
+              <label htmlFor="number-1">1</label>
+            </div>
+            <div className="rate__numbers--number">
+              <input type="radio" id='number-2' name='numbers' value={2} onChange={this.onRadioChange} />
+              <label htmlFor="number-2">2</label>
+            </div>
+            <div className="rate__numbers--number">
+              <input type="radio" id='number-3' name='numbers' value={3} onChange={this.onRadioChange} />
+              <label htmlFor="number-3">3</label>
+            </div>
+            <div className="rate__numbers--number">
+              <input type="radio" id='number-4' name='numbers' value={4} onChange={this.onRadioChange} />
+              <label htmlFor="number-4">4</label>
+            </div>
+            <div className="rate__numbers--number">
+              <input type="radio" id='number-5' name='numbers' value={5} onChange={this.onRadioChange} />
+              <label htmlFor="number-5">5</label>
+            </div>
+          </div>
+          <button onClick={this.buttonClicked}>SUBMIT</button>
+        </form>
       </div>
     )
   }
