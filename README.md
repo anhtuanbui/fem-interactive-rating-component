@@ -1,4 +1,4 @@
-# Product preview card
+# Interactive rating component
 
 This is the solution for a challenge from https://www.frontendmentor.io/  
 
